@@ -14,7 +14,6 @@ public class SaleRequest {
     @NotNull
     private Integer sale;
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dateTime;
     @NotNull
     @Size(min = 10, max = 10)

@@ -36,7 +36,7 @@ public class SalesDao {
 
 
     public List<SaleRequest> getSalesInPeriod(LocalDate startDate, LocalDate endDate, String customerId) {
-        return namedParameterJdbcTemplate.query("SELECT * FROM SALE WHERE SALE_DT > :startDate AND SALE_ST < :endDate AND CUST_ID = :customerId", new MapSqlParameterSource().addValue("startDate", startDate)
+        return namedParameterJdbcTemplate.query("SELECT * FROM SALE WHERE SALE_DT > :startDate AND SALE_DT < :endDate AND CUST_ID = :customerId", new MapSqlParameterSource().addValue("startDate", startDate)
                         .addValue("endDate", endDate)
                         .addValue("customerId", customerId),
                 new RowMapper<SaleRequest>() {
